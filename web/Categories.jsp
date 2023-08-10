@@ -54,7 +54,7 @@
                             <a class="nav-link active" href="./Categories.jsp"><i class="fa-solid fa-film icoon"></i>Categories</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link active " href="./Contact_us.jsp"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
+                            <a class="nav-link active " href="./Contact_us.jsp?id=1"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                         </li>
                     </ul>
                     <form class="d-flex ms-auto" role="search">
@@ -72,11 +72,6 @@
             </div>
         </nav>
         <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
-
-
-
-
 
         <section style="margin-top: 150px;">
             <div class="container">
@@ -120,7 +115,7 @@
                                                         <p class="card-text">ISBN: 1234567890</p>
                                                         <p class="card-text">Publication Date: 01.01.2023</p>
                                                         <div class="revbtn">
-                                                            <a href="./Review.jsp" class="btn btn-primary">Review</a>
+                                                            <a href="./Review.jsp?isbn=1222" class="btn btn-primary">Review</a>
                                                             <a href="#" class="btn btn-primary">Buy</a>
                                                         </div>
                                                     </div>

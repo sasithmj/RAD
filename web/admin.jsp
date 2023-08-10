@@ -1,6 +1,9 @@
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true" %>
+<%@ page import="java.io.*,java.util.*, javax.servlet.*" %>
+<%@ page import="javax.servlet.http.*" %>
+
 
 <!DOCTYPE HTML>
 <html>
@@ -47,7 +50,7 @@
                 <hr>
                 <h4 class="text-center">Movie Add</h4>
                 <!-- Once the form is submitted, all the form data is forwarded to InsertBooks.jsp -->
-                <form action="./InsertMovie.jsp" method="post">
+                <form action="ImageUpload" method="POST" enctype = "multipart/form-data">
                     <table class="table table-bordered mt-4">
                         <tr>
                             <td>Enter Movie_ID :</td>
@@ -59,7 +62,7 @@
                         </tr>
                         <tr>
                             <td>Import Image :</td>
-                            <td><input type="file" name="image" class="form-control-file"></td>
+                            <td><input type="file" name="image" class="form-control-file" size = "100" ></td>
                         </tr>
                         <tr>
                             <td>Enter Releasing_Date:</td>

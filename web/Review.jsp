@@ -1,12 +1,9 @@
+<%@page import="java.util.Base64"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ page import="java.sql.*" %>
-    <%@ page import="javax.sql.DataSource" %>
-   
-    
-        <!DOCTYPE html>
-        <html lang="en">
-
-
+<%@ page import="java.sql.*" %>
+<%--<%@ page import="javax.sql.DataSource" %>--%>
+<%@page import="classes.DbConnector"%>
+<%@page import="movies.BookDetails"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,29 +74,20 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
         <%
             // Assuming you have established a database connection
-            String dbUrl = "jdbc:mysql://localhost:3306/bookreview"; // Replace with your database URL
-            String dbUser = "root"; // Replace with your database username
-            String dbPassword = ""; // Replace with your database password
-            Connection connection = null;
-
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-            } catch (ClassNotFoundException | SQLException e) {
-                e.printStackTrace();
-                // Handle database connection errors
-            }
+            Connection con = DbConnector.getConnection();
 
             // Check if ISBN parameter is provided in the URL
-            if (request.getParameter("isbn") != null) {
-                String isbn = request.getParameter("isbn");
+            String isbn = request.getParameter("isbn");
 
-                // Get book details by ISBN
-                BookDetails bookDetails = BookDetails.getBookDetailsByISBN(connection, isbn);
-                if (bookDetails != null) {
-                    // Rest of your JSP code
+            // Get book details by ISBN
+            BookDetails bookDetails = BookDetails.getBookDetailsByISBN(con, isbn);
+//                if (bookDetails != null) {
+            // Rest of your JSP code
+
         %>
 
+
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <section id="counts" class="counts">
             <div class="container text-light" data-aos="fade-up">
                 <div class="section-title">
@@ -110,9 +98,9 @@
                         <%= bookDetails.getTitle()%>
                     </p>
                 </div>
-
                 <div class="row no-gutters ">
-                    <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start " data-aos="fade-right" data-aos-delay="100"><img src="data:image/jpg;charset=utf8;base64,<%= Base64.getEncoder().encodeToString(bookDetails.getImage())%>" alt=""></div>
+                    <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start " data-aos="fade-right" data-aos-delay="100">
+                        <img src="data:image/jpg;charset=utf8;base64,<%=Base64.getEncoder().encodeToString(bookDetails.getImage())%>" alt=""></div>
                     <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
                         <div class="content d-flex flex-column justify-content-center review">
                             <h3 style="text-transform: uppercase;">Title :&nbsp
@@ -143,16 +131,16 @@
                                 <%= bookDetails.getReview()%>
                             </p>
                             <div class="revbtn">
-                                <a href="#" class="btn btn-primary">Buy</a>
+                                <a href="subscribe.jsp" class="btn btn-primary">Buy</a>
                                 <!-- <a href="#" class="btn btn-primary" style="width: 90px;">Comment</a> -->
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </section>
-        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
 
 
         <!----------- Footer ------------>

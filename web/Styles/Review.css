@@ -122,7 +122,10 @@
         color: #fff;
         text-decoration: none;
     }
-    
+    img{
+        width: 500px;
+        height: auto;
+    }
     .button-87:active {
         transform: scale(0.95);
     }
