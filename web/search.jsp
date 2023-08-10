@@ -27,25 +27,28 @@
     </head>
     <body>
         <div class="sidebar">
-            <a  href="./admin.html">DashBoard</a>
-            <a href="./admin.jsp">Add Movie</a>
+            <a  href="./admin.jsp">DashBoard</a>
+            <a href="./insert.jsp">Add Movie</a>
             <a href="./view.jsp">View Movies</a>
             <a class="active" href="./search.jsp">Search Movies</a>
             <a href="./update.jsp">Update Movies</a>
+            <a href="./AdminLogin.html">Log Out</a>
         </div>
 
 
         <div class="content">
-            <h1 class="text-center">Admin Panel</h1>
-            <br>
-            <hr>
-            <h4 class="text-center font-weight-bold">Search Movies</h4>
-            <form action="./searchResults.jsp" class="mt-4" method="post" >
-                <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Search Movie by title, Category, Director, or Movie_ID">
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </div>
-            </form>
+            <div class="container mt-5">
+                <h1 class="text-center h1hed">Admin Panel</h1>
+                <br>
+                <hr>
+                <h4 class="text-center font-weight-bold">Search Movies</h4>
+                <form action="searchresult.jsp" method="post" class="mt-4">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Search Movie by title, Category, Director, or Movie_ID">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
 

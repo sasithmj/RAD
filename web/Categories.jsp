@@ -1596,9 +1596,9 @@
         <footer class="footer-bs">
             <div class="row ">
                 <div class="col-md-3 footer-brand animated fadeInLeft ">
-                    <img src="/images/logo.png " alt="logo " style="height:70px; width: 110px; ">
+                    <img src="./images/logo.png " alt="logo " style="height:70px; width: 110px; ">
                     <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
-                    <p>© 2007 CinesynC, All rights reserved</p>
+                    <p>ï¿½ 2007 CinesynC, All rights reserved</p>
                 </div>
                 <div class="col-md-4 footer-nav animated fadeInUp ">
                     <h4>Menu ?</h4>
@@ -1640,7 +1640,7 @@
                 </div>
             </div>
             <hr>
-            <span class="align-items-center justify-content-center d-flex ">© 2007 CinesynC, All rights reserved</span>
+            <span class="align-items-center justify-content-center d-flex ">ï¿½ 2007 CinesynC, All rights reserved</span>
         </footer>
         <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 

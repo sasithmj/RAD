@@ -4,7 +4,7 @@ import java.io.OutputStream;
 import java.sql.*;
 import java.util.Base64;
 
-public class MovieDetails {
+public class BookDetails {
     private String categories;
     private String title;
     private String isbn;
@@ -15,7 +15,7 @@ public class MovieDetails {
     private String review;
 
     // Constructor
-    public MovieDetails(String categories, String title, String isbn, String publicationDate, String author, byte[ ] image, String review) {
+    public BookDetails(String categories, String title, String isbn, String publicationDate, String author, byte[ ] image, String review) {
         this.categories = categories;
         this.title = title;
         this.isbn = isbn;
@@ -55,7 +55,7 @@ public class MovieDetails {
     }
 
     // Static method to get book details by ISBN from the database
-    public static MovieDetails getBookDetailsByISBN(Connection connection, String isbn) {
+    public static BookDetails getBookDetailsByISBN(Connection connection, String isbn) {
         String query = "SELECT * FROM movie WHERE Movie_ID = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, isbn);
@@ -70,7 +70,7 @@ public class MovieDetails {
 //                    String base64Encoded = new String(Base64.encodeBase64(image), "UTF-8");
                     String review = resultSet.getString("Review");
 
-                    return new MovieDetails(categories, title, isbn, publicationDate, author, imgData, review);
+                    return new BookDetails(categories, title, isbn, publicationDate, author, imgData, review);
                 } else {
                     return null; // No data found for the given ISBN
                 }

@@ -29,25 +29,28 @@
     </head>
     <body>
         <div class="sidebar">
-            <a  href="./admin.html">DashBoard</a>
-            <a href="./admin.jsp">Add Movie</a>
+            <a  href="./admin.jsp">DashBoard</a>
+            <a href="./insert.jsp">Add Movie</a>
             <a href="./view.jsp">View Movies</a>
             <a href="./search.jsp">Search Movies</a>
             <a class="active" href="./update.jsp">Update Movies</a>
+            <a href="./AdminLogin.html">Log Out</a>
         </div>
 
 
         <div class="content">
-            <h1 class="text-center">Admin Panel</h1>
-            <br>
-            <hr>
-            <h4 class="text-center">Movie Update</h4>
-            <form action="update_movie.jsp" method="post" class="mt-4">
-                <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Search for the book by ISBN whose is going to update">
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </div>
-            </form>
+            <div class="container mt-5">
+                <h1 class="text-center h1hed">Admin Panel</h1>
+                <br>
+                <hr>
+                <h4 class="text-center">Movie Update</h4>
+                <form action="update_movie.jsp" method="post" class="mt-4">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Search for the book by ISBN whose is going to update">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>
