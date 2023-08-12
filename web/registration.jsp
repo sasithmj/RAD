@@ -6,6 +6,7 @@
 <%@page import="classes.DbConnector"%>
 <%@page import="classes.User"%>
 <%
+    
     String firstname = request.getParameter("firstname");
     String lastname = request.getParameter("lastname");
     String username = request.getParameter("email");

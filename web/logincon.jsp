@@ -7,13 +7,16 @@
 <%@page import="classes.User"%>
 <%@page session="true" %>
 <%
+
     String username = request.getParameter("username");
     String password = request.getParameter("password");
 
     User user = new User(username, password);
     if (user.authenticate(DbConnector.getConnection())) {
-        session.setAttribute("user", "sasith");
-        response.sendRedirect("index.html");
+        Cookie cookie = new Cookie("username", username);
+        cookie.setMaxAge(60 * 60 * 24);
+        response.addCookie(cookie);
+        response.sendRedirect("index.jsp");
     } else {
         response.sendRedirect("login.jsp?status=0");
     }
